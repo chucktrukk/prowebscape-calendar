@@ -1,0 +1,12 @@
+h2. Install Instructions
+
+# Upload 'calendar' to /assets/snippets/calendar/
+# Create a new snippet called 'Calendar'
+# Snippet Description: '<strong>1.0</strong>'
+# Paste the following as the snippet code:
+$basePath = $modx->config['base_path'] . '/assets/snippets/calendar/';
+include $basePath . 'calendar.inc.php'
+
+h2. Run instructions
+
+see http://www.quantum-cmg.com/demos/
