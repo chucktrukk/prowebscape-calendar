@@ -1,0 +1,209 @@
+/*******
+    Default Positioning
+    Do not change
+*******/
+
+.sf-menu, #main-menu * {
+	margin:			0;
+	padding:		0;
+	list-style:		none;
+}
+#main-menu {
+	line-height:	1.0;
+}
+#main-menu ul {
+	position:		absolute;
+	top:			-999em;
+	width:			10em; /* left offset of submenus need to match (see below) */
+}
+#main-menu ul li {
+	width:			100%;
+}
+#main-menu li:hover {
+	visibility:		inherit; /* fixes IE7 'sticky bug' */
+}
+#main-menu li {
+	float:			left;
+	position:		relative;
+}
+#main-menu a {
+	display:		block;
+	position:		relative;
+}
+#main-menu li:hover ul,
+#main-menu li.sfHover ul {
+	left:			0;
+	z-index:		99;
+}
+ul#main-menu li:hover li ul,
+ul#main-menu li.sfHover li ul {
+	top:			-999em;
+}
+ul#main-menu li li:hover ul,
+ul#main-menu li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+ul#main-menu li li:hover li ul,
+ul#main-menu li li.sfHover li ul {
+	top:			-999em;
+}
+ul#main-menu li li li:hover ul,
+ul#main-menu li li li.sfHover ul {
+	left:			10em; /* match ul width */
+	top:			0;
+}
+
+/*******
+    First Level Styles
+*******/
+
+    .nav {
+        margin-top: -49px;
+      	position: relative;
+      	margin-bottom: 31px;
+        }
+
+        .nav ul#main-menu {
+            margin: 0 30px 0 20px;
+            }
+            
+            #main-menu {
+                float:			left;
+                margin-bottom:	1em;
+                }
+            
+                #main-menu li {
+                    background:	none;
+                    }
+            
+                    #main-menu li a {
+                        padding: 13px 15px;
+                        font-size: 12px;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        color: #fff;
+                        background: url(../images/bg-main-menu-border.png) top right no-repeat;
+                        }
+                        
+                        #main-menu li.first a {
+                        }
+
+                        #main-menu li:hover, 
+                        #main-menu li.sfHover,
+                        #main-menu a:focus, 
+                        #main-menu a:hover, 
+                        #main-menu a:active {
+                            background: none;
+                            outline: 0;
+                            }
+
+        .sf-sub-indicator { /* IE6 only */
+            top: 1.05em;
+            }
+
+        a > .sf-sub-indicator { /* give all except IE6 the correct values */
+            top: 14px;
+            }
+                                        
+/*******
+    SubMenu Styles
+*******/
+    #main-menu li:hover ul,
+    #main-menu li.sfHover ul {
+        top: 38px;               /* match top ul list item height */
+        padding: 0 10px 10px 0; /* for drop-shadow */
+        }
+
+        #main-menu li li,
+        #main-menu li li:hover, 
+        #main-menu li li.sfHover {
+            background:	#530000 url(../images/superfish-dropdown-div.png) bottom repeat-x;
+            line-height: 1.5em;
+            }
+
+            #main-menu li li:hover, 
+            #main-menu li li.sfHover {
+                background-color: #840000;
+                }
+                            
+                #main-menu li li a,
+                #main-menu li li a:focus, 
+                #main-menu li li a:hover, 
+                #main-menu li li a:active {
+                    background: none;
+                    outline: 0;
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    color: #fff;
+                    padding: 10px 15px; /*padding around elements creates size */
+                    }
+            
+#main-menu li li li {
+	background:		#530000;
+}
+
+/*******
+    Arrows 
+*******/
+    #main-menu a.sf-with-ul {
+        min-width:		1px;    /* trigger IE7 hasLayout so spans position accurately */
+        padding-right: 	2.25em;
+        }
+
+        .sf-sub-indicator {
+            position:		absolute;
+            display:		block;
+            right:			.75em;
+            width:			10px;
+            height:			10px;
+            text-indent: 	-999em;
+            overflow:		hidden;
+            background:		url(../images/superfish-arrows-ffffff.png) no-repeat -10px -100px; /* 8-bit indexed alpha png. IE6 gets solid image only */
+            }
+
+        a > .sf-sub-indicator {             /* give all except IE6 the correct values */
+            background-position: 0 -100px; /* use translucent arrow for modern browsers*/
+            }
+
+            
+            a:focus > .sf-sub-indicator,
+            a:hover > .sf-sub-indicator,
+            a:active > .sf-sub-indicator,
+            li:hover > a > .sf-sub-indicator,
+            li.sfHover > a > .sf-sub-indicator {    /* apply hovers to modern browsers */
+                background-position: -10px -100px; /* arrow hovers for modern browsers*/
+                }
+    
+    #main-menu ul .sf-sub-indicator {   /* point right for anchors in subs */
+        background-position:  -10px 0; 
+        }
+        
+        #main-menu ul a > .sf-sub-indicator { 
+            background-position:  0 0; 
+            }
+                
+        #main-menu ul a:focus > .sf-sub-indicator,
+        #main-menu ul a:hover > .sf-sub-indicator,
+        #main-menu ul a:active > .sf-sub-indicator,
+        #main-menu ul li:hover > a > .sf-sub-indicator,
+        #main-menu ul li.sfHover > a > .sf-sub-indicator {  /* apply hovers to modern browsers */
+            background-position: -10px 0;                  /* arrow hovers for modern browsers*/
+            }
+
+/*******
+    Shadows
+*******/
+
+    .sf-shadow ul {
+        background:	url(../images/superfish-shadow.png) no-repeat bottom right;
+        padding: 0 8px 9px 0;
+        -moz-border-radius-bottomleft: 17px;
+        -moz-border-radius-topright: 17px;
+        -webkit-border-top-right-radius: 17px;
+        -webkit-border-bottom-left-radius: 17px;
+        }
+        
+    .sf-shadow ul.sf-shadow-off {
+        background: transparent;
+        }

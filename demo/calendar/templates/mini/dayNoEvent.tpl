@@ -1,0 +1,1 @@
+<td class="monthday">[+day+]</td>

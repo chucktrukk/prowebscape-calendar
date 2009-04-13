@@ -1,0 +1,51 @@
+/* overall table */
+#calendar-mini table {
+    padding: 0;
+    margin:20px auto;
+    width: 200px;
+    }
+
+#calendar-mini td.monthnavigation,
+#calendar-mini td.monthname {
+    text-align: center;
+    }
+
+/* how days this month will look, make dates appear in top right */
+#calendar-mini td.monthday,
+#calendar-mini td.event {
+    background: #eee;
+    color: #000;
+    padding: 6px;
+    margin: 0;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #fff;
+    width: 14%;
+    border-collapse: separate;
+}
+
+#calendar-mini td.nomonthday {
+    background: #e3e3e3;
+    }
+
+#calendar-mini tr.dayname td {
+    text-align: center;
+    }
+
+#calendar-mini a {
+    text-decoration: none;
+    }
+
+#calendar-mini a:hover {
+    text-decoration: underline;
+    }
+        
+#calendar-mini .simplemodal {
+    display: none;
+    }
+
+#calendar-mini .eventcontent {
+    text-align: left;
+    padding-bottom: 6px;
+    display: none;
+    }

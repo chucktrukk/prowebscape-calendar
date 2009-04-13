@@ -1,0 +1,25 @@
+.event-list li {
+    list-style-type: none;
+    background: #e3e3e3;
+    border-bottom: 1px solid #999;
+    padding: 5px 10px;
+    }
+
+.event-list li.alt {
+    background: #d5d5d5;
+    }
+
+.event-list li .day {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", Times, serif;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    height: 30px;
+    width: 20px;
+    color: #6a942b;
+    border-right: 1px solid #999;
+    margin-right: 5px;
+    padding-right: 5px;
+    line-height: 35px;
+    font-size: 18px;
+    }

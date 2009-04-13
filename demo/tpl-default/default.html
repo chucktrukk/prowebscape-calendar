@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+        [[Actions? &action=`setTemplatePath` &path=`tpl-default`]]
+		<title>[[Actions? &action=`showTitle`]]</title>
+		
+        <base href="[(site_url)]"></base>
+        <meta name="description" content="[*MetaDescription*]">
+        <meta name="keywords" content="[*MetaKeywords*]">
+		
+        <link   type="text/css"       href="[+tplDirectory+]/css/all.css" media="screen" rel="stylesheet" />
+        <script type="text/javascript" src="assets/js/jquery-1.3.1.min.js"></script>
+		
+	</head>
+<body>
+<div class="container">
+	<div class="header">
+	   <a class="logo" href="[~2~]">
+	       <h1>h1 content</h1>
+	   </a>
+	   
+	   <div class="main-nav">
+	       <ul>
+	           [[Wayfinder? &startId=`1` &level=`2` &outerTpl=`Nav-Default-Wrapper` &innerTpl=`Nav-Inner-Wrapper` &firstClass=`first` &hereClass=`active`]]
+	       </ul>
+	   </div>
+	</div>
+
+    <div class="content">
+    <div class="content-wrap">
+        [*PageLayout*]
+    </div>
+
+</div>
+</body>
+</html>

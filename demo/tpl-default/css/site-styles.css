@@ -1,0 +1,141 @@
+    body {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        background: #a4bf45 url(../images/body-bg.png) repeat-x;
+        height:100%;
+        font-size: 12px;
+        line-height: 1.5em;
+        }
+    
+    .container {
+        width: 793px;
+        margin: 100px auto 20px;
+        position: relative;
+        }
+    
+    .header {
+        }
+    
+    a.logo {
+        width: 253px;
+        height: 89px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        }
+    a.logo h1 {
+        margin-left: -5000px;
+        }
+    
+    .main-nav {
+        padding-top: 65px;
+        margin-left: 300px;
+        margin-right: 20px;
+        text-align: right;
+        }
+        
+        .main-nav li {
+            display: inline;
+            margin-left: 25px;
+            font-size: 14px;
+            }
+    
+    .content {
+        margin: -5px 0 -3px;
+        }
+    
+    .content-wrap {
+        padding: 20px 20px 20px 42px;
+        }
+
+h2 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Times New Roman", Times, serif;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 1em;
+    }
+
+h3 {
+    font-size: 14px;
+    margin-bottom: 1em;
+    }
+    
+a {
+    color: #6a942b;
+    }
+
+p {
+    margin-bottom: 1em;
+    }
+
+ul {
+    margin-bottom: 1em;
+    }
+    
+li {
+    list-style-type: disc;
+    list-style-position: inside;
+    }
+
+.main-nav ul {
+    margin-bottom: 0;
+    }        
+.main-nav a {
+    color: #000;
+    text-decoration: none;
+    }
+
+.gallery-listing h3 {
+    float: left;
+    width: 30%;
+    }
+
+/*******
+    Highslide Gallery
+*******/
+
+.highslide-wrapper {
+    background: none;
+    }
+
+    .highslide-item {
+    	margin: 10px 10px 0 0;
+    	width: 23%;
+    	float: left;
+        }
+        
+        a.highslide {
+            display: table-cell;
+            width: 168px;
+            height: 168px;
+            text-align: center; /* qui e non su precedente, iCab3 */
+            vertical-align: middle;
+            background: #e3e3e3;
+            }
+
+        a.highslide img {
+            border: solid 1px #000;
+            vertical-align: middle;
+            }
+
+#tabs li {
+    list-style-type: none;
+    }
+
+#tabs div a {
+	color: #6a942b;
+	}
+
+.info {
+	border: 1px solid #A8CBFF;
+	padding: 0 1em 1em;
+	font-family: "Courier New", Courier, monospace;
+	margin-bottom: 1em;
+	}
+
+.info h3 {
+	margin: 1em 0 0 0;
+	}
+
+.info a.code {
+	display: block;
+	}

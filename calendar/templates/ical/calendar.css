@@ -1,0 +1,92 @@
+#calendar-ical table {
+	border-collapse: separate;
+	border: 1px solid #9DABCE;
+	border-width: 0px 0px 1px 1px;
+	margin: 10px auto;
+	font-size: 20px;
+}
+
+#calendar-ical table tr.navigation th {
+	background: #C7CED6;
+	font-size: 14px;
+}
+
+#calendar-ical table tr.navigation th a {
+	color: #0F7AE4;
+	text-decoration: none;
+}
+
+#calendar-ical td.date_has_event,
+#calendar-ical td.monthday,
+#calendar-ical th {
+	width: 81px;
+	height: 81px;
+	text-align: center;
+	vertical-align: middle;
+	background: url(images/cells.png);
+	color: #444;
+	position: relative;
+}
+#calendar-ical table th {
+	height: 30px;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: center;
+}
+#calendar-ical td:hover,
+#calendar-ical th:hover {
+	background-position: 0px -81px;
+	color: #222;
+}
+#calendar-ical td.date_has_event {
+	background-position: 162px 0px;
+	color: white;
+}
+#calendar-ical td.date_has_event:hover {
+	background-position: 162px -81px;
+}
+#calendar-ical td {
+	background: url(images/calpad.jpg);
+}
+#calendar-ical td.today {
+	background-position: 81px 0px;
+	color: white;
+}
+#calendar-ical td.today:hover {
+	background-position: 81px -81px;
+}
+#calendar-ical .events {
+	position: relative;
+}
+#calendar-ical .events ul {
+	text-align: left;
+	position: absolute;
+	display: none;
+	z-index: 1000;
+	padding: 15px;
+	background: #E7ECF2 url(images/popup.png) no-repeat;
+	color: white;
+	border: 1px solid white;
+	font-size: 15px;
+	width: 200px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-border-radius: 3px;
+	list-style: none;
+	color: #444444;
+	-webkit-box-shadow: 0px 8px 8px #333;
+}
+#calendar-ical .events li {
+	padding-bottom: 5px;
+}
+#calendar-ical .events li span {
+	display: block;
+	font-size: 12px;
+	text-align: justify;
+	color: #555;
+}
+#calendar-ical .events li span.title {
+	font-weight: bold;
+	color: #222;
+}
