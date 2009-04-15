@@ -5,13 +5,15 @@ require_once($basePath.'classes/class.simplepie-gcalendar.php');
 require_once($basePath.'classes/class.Calendar_Events.php');
 
 /* Snippet Parameters */
-$email      = (isset($email))   ? $email    : "fellowshipchurchjackson@gmail.com";
-$offset     = (isset($offset))  ? $offset   : "now";
-$order      = (isset($order))   ? $order    : true;
-$useCache   = (isset($useCache))? $useCache : true;
-$template   = (isset($template))? $template : 'default';
-$display    = (isset($display)) ? $display  : 'calendar';
-$limit      = (isset($limit))   ? $limit    : 10;
+$useModx     	= (isset($useModx))			? $useModx	 		: true;
+$emails      	= (isset($emails))   		? $emails    		: "usa__en@holiday.calendar.google.com";
+$offset     	= (isset($offset))  		? $offset   		: "now";
+$order      	= (isset($order))   		? $order    		: true;
+$useCache   	= (isset($useCache))		? $useCache 		: true;
+$template   	= (isset($template))		? $template 		: 'default';
+$display    	= (isset($display)) 		? $display  		: 'calendar';
+$limit      	= (isset($limit))   		? $limit    		: 10;
+$showPastEvents	= (isset($showPastEvents))  ? $showPastEvents   : true;
 /* end of Snippet Parameters */
 
 extract($_GET);    
@@ -20,22 +22,35 @@ $month = isset($_GET['month'])  ? $month    : date('m');
 
 $startMin = gmdate('Y-m-d',mktime(0, 0, 0, gmdate($month)-2  , gmdate("d"), gmdate($year)));
 $startMax = gmdate('Y-m-d',mktime(0, 0, 0, gmdate($month)+2  , gmdate("d"), gmdate($year)));
-if ($showPastEvents == '0') {
+if (!$showPastEvents) {
     $startMin = date("Y-m-d");
 }
 
-/* Non-Modx Site */
-$this_page = basename($_SERVER['REQUEST_URI']);
-if (strpos($this_page, "?") !== false) $this_page = reset(explode("?", $this_page));
-$this_page = 'index.php';
-$this_page .= '?';
+if ($useModx) {
+	/* Modx Site */
+	$docId     	= $modx->documentIdentifier;
+	$this_page 	= $modx->makeUrl($docId);
 
-/* Modx Site
-$docId     = $modx->documentIdentifier;
-$this_page = $modx->makeUrl($docId);
-*/
+	$url_arg	= '&';
+	if($modx->config['friendly_urls'] == 1) {
+  		$arg = '?';
+	}
+	
+	$this_page .= $url_arg;
+} else {
+	/* Non-Modx Site */
+	$this_page = basename($_SERVER['REQUEST_URI']);
+	if (strpos($this_page, "?") !== false) $this_page = reset(explode("?", $this_page));
+	$this_page  = 'index.php';
+	$this_page .= '?';
+}
 
-$url  = SimplePie_GCalendar::create_feed_url($email);
+$emails = explode(',', $emails);
+$urls 	= array();
+foreach ($emails as $email){
+	$urls[] = SimplePie_GCalendar::create_feed_url($email);
+}
+
 $feed = new SimplePie_GCalendar();
 
     /* GCalendar Parameters */
@@ -54,7 +69,7 @@ $feed = new SimplePie_GCalendar();
     else
     $feed->enable_cache(false);
     
-    $feed->set_feed_url($url);
+    $feed->set_feed_url($urls);
 	$feed->enable_order_by_date(FALSE);
 	$feed->init();
 	$feed->handle_content_type();

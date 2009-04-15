@@ -210,14 +210,17 @@ class Calendar_Events extends Calendar
     */
     function getDaysEvents($day)
     {   
-        if (0 < count($this->events[ $day ]))
-        {
-            return $this->events[$day];
-        }
+    	if (isset($this->events[ $day ]))
+    	{
+	        if (0 < count($this->events[ $day ]))
+	        {
+	            return $this->events[$day];
+	        }
+		}
         else
         {
             return FALSE;
         }
-    }    
+    }
 }
 ?>
