@@ -50,7 +50,7 @@ if ($useModx) {
 $emails = explode(',', $emails);
 $urls 	= array();
 foreach ($emails as $email){
-	$urls[] = SimplePie_GCalendar::create_feed_url($email);
+	$urls[] = trim(SimplePie_GCalendar::create_feed_url($email));
 }
 $feed = new SimplePie_GCalendar();
 
@@ -83,6 +83,7 @@ $feed = new SimplePie_GCalendar();
 		
 		$startDate = $item->get_start_time();
 		$endDate   = $item->get_end_time();
+		$calName   = $item->get_name();
         $cal_dates[] = array(
                 'sortDate'  => $item->get_start_time(),
                 'startDate' => date("M j, y g:i", $startDate - $offset),
@@ -105,6 +106,9 @@ $feed = new SimplePie_GCalendar();
                 'endHour'       => date('g', $endDate - $offset),
                 'endMinute'     => date('i', $endDate - $offset),
                 'endMeridiem'   => date('A', $endDate - $offset),
+                'calName'		=> $calName,
+                'calNameClean'	=> str_replace(' ', '-', strtolower($calName)),
+                'calEmail'		=> $item->get_email(),
             );
 	}
 

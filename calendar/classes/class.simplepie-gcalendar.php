@@ -293,4 +293,14 @@ class SimplePie_Item_GCalendar extends SimplePie_Item {
 		}
 		return $time1-$time2;
 	}
+
+    function get_name() {
+    	$gd_who = $this->get_item_tags(SIMPLEPIE_NAMESPACE_GOOGLE_CALENDAR_ITEM, 'who');
+    	return $gd_who[0]['attribs']['']['valueString'];
+    }
+    
+    function get_email() {
+    	$gd_who = $this->get_item_tags(SIMPLEPIE_NAMESPACE_GOOGLE_CALENDAR_ITEM, 'who');
+    	return $gd_who[0]['attribs']['']['email'];    
+    }
 }

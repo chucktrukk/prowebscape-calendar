@@ -139,3 +139,19 @@ li {
 .info a.code {
 	display: block;
 	}
+
+#instructions ol {
+	padding-left: 20px;
+	margin: 0 0 20px 0;
+	}
+#instructions ol li {
+	list-style-type: decimal;
+	list-style-position: outside;
+	}
+ul.parameters li {clear: both; border: 1px solid #e3e3e3; margin-bottom: 3px; padding: 5px;}
+ul.parameters li span.name { font-weight: bold; float: left; width: 125px;}
+ul.parameters li span.value { color: #005DF9;}
+ul.parameters li span.details {display: block; margin-left: 125px;}
+
+ul.placeholders li {clear: both; border: 1px solid #e3e3e3; margin-bottom: 3px; padding: 5px;}
+ul.placeholders li span.name { font-weight: bold; float: left; width: 150px;}

@@ -28,7 +28,7 @@
 	</head>
 <body>
 <div class="download" style="background: #000; color: #fff; border: 1px solid #e3e3e3; height: 100px; line-height: 100px; text-align: center">
-<a href="#" style="color: yellow; font-size: 24px">click me to Download Snippet. (not available)</a>
+<a href="http://github.com/chucktrukk/prowebscape-calendar/tree/master" style="color: yellow; font-size: 24px">Download from Github</a>
 </div>
 
 <div class="container">
@@ -139,7 +139,156 @@
 			</div>			
 			<div id="instructions">
 				<h2>Instructions</h2>
-				<p>Coming soon...</p>
+			
+				<h3>Install on modx</h3>
+				<ol class="install">
+					<li>Upload 'calendar' to /assets/snippets/calendar/</li>
+					<li>Create a new snippet called 'Calendar'</li>
+					<li>Snippet Description: '<strong>1.0</strong>'</li>
+					<li>Paste the following as the snippet code:
+						<br/>$basePath = $modx->config['base_path'] . '/assets/snippets/calendar/';
+						<br/>include $basePath . 'calendar.inc.php'
+					</li>
+				</ol>
+				
+				<h3>Available snippet parameters</h3>
+					<ul class="parameters">
+						<li>
+							<span class="name">useModx</span>
+							<span class="value">true or false</span>
+							<span class="details">Default: true. You can use this thing outside of modx. How cool is that?</span>
+						</li>
+						<li>
+							<span class="name">emails</span>
+							<span class="value">any google calendar email</span>
+							<span class="details">Default: usa__en@holiday.calendar.google.com. You can use multiple calendars seperated by a comma</span>
+						</li>
+						<li>
+							<span class="name">offset</span>
+							<span class="value">+1 hour, +3 hours, -4 hours</span>
+							<span class="details">Default: now. If the times are wrong on the calendar, you can fix them by setting the offset</span>
+						</li>
+						<li>
+							<span class="name">order</span>
+							<span class="value">true or false</span>
+							<span class="details">Default: true. True sorts ascending. False sorts descending.</span>
+						</li>
+						<li>
+							<span class="name">useCache</span>
+							<span class="value">true or false</span>
+							<span class="details">Default: true. You only want to turn this off if you are debugging or demoing this to a client.</span>
+						</li>
+						<li>
+							<span class="name">template</span>
+							<span class="value">name of folder inside calendar/templates/</span>
+							<span class="details">Default: default.</span>
+						</li>
+						<li>
+							<span class="name">display</span>
+							<span class="value">calendar or list</span>
+							<span class="details">Default: calendar. Do you want to show the calendar or an ordered list?</span>
+						</li>
+						<li>
+							<span class="name">limit</span>
+							<span class="value">any number</span>
+							<span class="details">Default: 10. This is for display: list. And it's buggy. Anyone want to fix it?</span>
+						</li>
+						<li>
+							<span class="name">showPastEvents</span>
+							<span class="value">true or false</span>
+							<span class="details">Default: true. You probably only want to set this false for display: list</span>
+						</li>
+					</ul>
+					
+					<h3>Available template placeholders</h3>
+					<ul class="placeholders">
+						<li>
+							<span class="name">[+startDate+]</span>
+							<span class="value">M j, y g:i</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+endDate+]</span>
+							<span class="value">M j, y g:i</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+pubDate+]</span>
+							<span class="value">M j, y g:i</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+title+]</span>
+							<span class="value">Title of event</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+where+]</span>
+							<span class="value">Location of event</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+link+]</span>
+							<span class="value">Link to event page in google calendar</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+status+]</span>
+							<span class="value">onfirmed really means confirmed</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+description+]</span>
+							<span class="value">Description of event</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+startDay+], [+endDay+]</span>
+							<span class="value">Day of the month without leading zeros - 1 to 31</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+startMonth+], [+endMonth+]</span>
+							<span class="value">Numeric representation of a month, without leading zeros - 1 through 12</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+startYear+], [+endYear+]</span>
+							<span class="value">A full numeric representation of a year, 4 digits - Examples: 1999 or 2003</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+startHour+], [+endHour+]</span>
+							<span class="value">12-hour format of an hour without leading zeros	1 through 12</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+startMinute+], [+endMinute+]</span>
+							<span class="value">Minutes with leading zeros - 00 to 59</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+startMeridiem+], [+endMeridiem+]</span>
+							<span class="value">Uppercase Ante meridiem and Post meridiem - AM or PM</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+calName+]</span>
+							<span class="value">Name of the calendar feed - Example: 'US Holidays'</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+calNameClean+]</span>
+							<span class="value">Name of the calendar feed in URL form - Example: 'us-holidays'</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+						<li>
+							<span class="name">[+calEmail+]</span>
+							<span class="value">Email of the calendar feed</span>
+							<div class="clear">&nbsp;</div>
+						</li>
+
+					</ul>
 			</div>
         </div>
     </div>
