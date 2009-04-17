@@ -51,7 +51,7 @@
 				
 				<div class="info">
 					<h3>Snippet call:</h3>
-					[!Calendar? &email=`usa__en@holiday.calendar.google.com` &offset=`-2 hours` &template=`mini`!]
+					[!Calendar? &emails=`usa__en@holiday.calendar.google.com` &offset=`-2 hours` &template=`mini`!]
 					<h3>Template Files</h3>
 					<a class="code" href="calendar/templates/mini/calendar.css">calendar.css</a>
 					<a class="code" href="calendar/templates/mini/calendar.tpl">calendar.tpl</a>
@@ -74,7 +74,7 @@
 
 				<div class="info">
 					<h3>Snippet call:</h3>
-					[!Calendar? &email=`usa__en@holiday.calendar.google.com,christian__en@holiday.calendar.google.com` &offset=`-2 hours` &template=`default`!]
+					[!Calendar? &emails=`usa__en@holiday.calendar.google.com,christian__en@holiday.calendar.google.com` &offset=`-2 hours` &template=`default`!]
 					<h3>Template Files</h3>
 					<a class="code" href="calendar/templates/default/calendar.css">calendar.css</a>
 					<a class="code" href="calendar/templates/default/calendar.tpl">calendar.tpl</a>
@@ -98,7 +98,7 @@
 					From: <a href="http://www.stefanoverna.com/log/create-astonishing-ical-like-calendars-with-jquery">http://www.stefanoverna.com/log/create-astonishing-ical-like-calendars-with-jquery</a>
 					
 					<h3>Snippet call:</h3>
-					[!Calendar? &email=`usa__en@holiday.calendar.google.com` &offset=`-2 hours` &display=`calendar` &template=`ical`!]
+					[!Calendar? &emails=`usa__en@holiday.calendar.google.com` &offset=`-2 hours` &display=`calendar` &template=`ical`!]
 					
 					<h3>Template Files</h3>
 					<a class="code" href="calendar/templates/ical/calendar.css">calendar.css</a>
@@ -121,7 +121,7 @@
 
 				<div class="info">
 					<h3>Snippet call:</h3>
-					[!Calendar? &email=`usa__en@holiday.calendar.google.com` &offset=`-2 hours` &template=`list` <strong>&display=`list`</strong>!]
+					[!Calendar? &emails=`usa__en@holiday.calendar.google.com` &offset=`-2 hours` &template=`list` <strong>&display=`list`</strong>!]
 					
 					<h3>Template Files</h3>
 					<a class="code" href="calendar/templates/default/event-list.css">event-list.css</a>
