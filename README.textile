@@ -4,8 +4,9 @@ h2. Install Instructions
 # Create a new snippet called 'Calendar'
 # Snippet Description: '<strong>1.0</strong>'
 # Paste the following as the snippet code:
-$basePath = $modx->config['base_path'] . '/assets/snippets/calendar/';
-include $basePath . 'calendar.inc.php'
+
+bq. $basePath = $modx->config['base_path'] . '/assets/snippets/calendar/';
+include $basePath . 'calendar.inc.php';
 
 h2. Run instructions
 

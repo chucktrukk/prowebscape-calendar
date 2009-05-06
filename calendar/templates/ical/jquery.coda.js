@@ -1,4 +1,4 @@
-$(function () {
+jQuery(function($) {
 	$('.date_has_event').each(function () {
 		// options
 		var distance = 10;
