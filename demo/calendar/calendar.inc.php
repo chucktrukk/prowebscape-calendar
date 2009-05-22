@@ -26,6 +26,9 @@ if (!$showPastEvents) {
     $startMin = date("Y-m-d");
 }
 
+/* Set Correct Offset */
+$offset = (strtotime("now")-strtotime($offset));
+
 if ($useModx) {
 	/* Modx Site */
 	$docId     	= $modx->documentIdentifier;

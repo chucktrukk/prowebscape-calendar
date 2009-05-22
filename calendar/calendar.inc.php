@@ -27,6 +27,9 @@ if (!$showPastEvents) {
     $startMin = date("Y-m-d");
 }
 
+/* Set Correct Offset */
+$offset = (strtotime("now")-strtotime($offset));
+
 /* Set URL to use */
 if ($useModx) {
 	/* Modx Site */
